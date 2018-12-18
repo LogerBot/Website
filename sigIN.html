@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+            <script src="https://cdn.firebase.com/libs/firebaseui/3.5.0/firebaseui.js"></script>
+            <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.0/firebaseui.css" />
+            <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='https://static.tumblr.com/maopbtg/oimmiw86r/jquery.autosize-min.js'></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.0/firebaseui.js"></script>
+    </head>
+    <body>
+        <h1 id="Name"></h1>
+    </body>
+</html>
+
+
+
+
+
+<script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBfNw37iyuwI3-W5Wn4H9P34n3f0rl5dzY",
+          authDomain: "login-476c9.firebaseapp.com",
+          databaseURL: "https://login-476c9.firebaseio.com",
+          projectId: "login-476c9",
+          storageBucket: "login-476c9.appspot.com",
+          messagingSenderId: "72881085156"
+        };
+        firebase.initializeApp(config);
+        firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    document.getElementById("Name").innerHTML = user.displayName
+  }
+        });        
+</script>
